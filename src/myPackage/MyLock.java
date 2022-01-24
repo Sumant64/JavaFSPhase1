@@ -94,5 +94,37 @@ public class MyLock {
         }
     }
     
-    
+    /**
+     * It will search for the file in the directory.
+     */
+    public static void searchFile(){
+        try{
+            Scanner obj=new Scanner(System.in);
+            System.out.println("Enter the filename to search");
+            String name=obj.nextLine();
+            File dir=new File(projectPath);
+            String file[]=dir.list();
+            int pos=0;
+
+            if(file==null)
+                System.out.println("File is not present in the directory");
+            else{
+                for (int i = 0; i < file.length; i++) {
+                    String filename = file[i];
+                    if (filename.equalsIgnoreCase(name+".txt")) {
+                        System.out.println(filename + " found");
+                        pos = 1;
+                    }
+                }
+
+                }
+            if (pos == 0) {
+                System.out.println("File Not Found");
+            }
+           
+        }
+        catch(Exception ex){
+            System.out.println(errorMessage);
+        }
+    }
 }
