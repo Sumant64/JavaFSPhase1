@@ -43,5 +43,35 @@ public class MyLock {
         }
     }
 
-	
+    /**
+     * It will add the file in the present directory.
+     */
+    public static void addFile(){
+    
+        try{
+            Scanner obj=new Scanner(System.in);
+            System.out.println("Enter the file name");
+            String add=obj.nextLine();
+            File myObj = new File(projectPath+"\\"+add+".txt");
+            myObj.createNewFile();
+            
+            System.out.println("Enter number of line to write");
+            int l=obj.nextInt();
+            obj.nextLine();
+            String line=obj.nextLine();
+            for(int i=1;i<=l;i++){
+                FileWriter fw=new  FileWriter(myObj, true);
+                System.out.println("Enter line");
+                line=obj.nextLine();
+                fw.write(line+ "\n");
+                fw.close();
+            }
+            
+        }
+        catch(Exception ex){
+            System.out.println(errorMessage);
+        }
+    }
+    
+    
 }
