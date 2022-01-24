@@ -73,5 +73,26 @@ public class MyLock {
         }
     }
     
+    /**
+     * It will delete the file present in the directory
+     */
+    public static void deleteFile(){
+        try{
+            Scanner obj=new Scanner(System.in);
+            System.out.println("Enter the file to delete");
+            String delnam=obj.nextLine();
+            File dir=new File(projectPath+"\\"+delnam+".txt");
+            
+            if(dir.delete())
+                System.out.println("File got deleted");
+            else
+                System.out.println("Filed to delete the file");
+            
+        }
+        catch(Exception ex){
+            System.out.println(errorMessage);
+        }
+    }
+    
     
 }
