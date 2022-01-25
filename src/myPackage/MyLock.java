@@ -13,19 +13,26 @@ public class MyLock {
 	       System.out.println("Enter the option");
 	       n=sc.nextInt();
 	       
-	        switch(n){
-	            case 1: display();
-	            break;
-	            case 2: addFile();
-	            break;
-	            case 3: deleteFile();
-	            break;
-	            case 4: searchFile();
-	            break;
-	            case 5: System.exit(0);
-	            break;
-	            default: System.out.println("Invalid Input");
-	            break;
+	       switch(n){
+           case 1: display();
+           break;
+           case 2: System.out.println("\t\tEnter the operation to perform.\n\t\t1. Add File\n\t\t2. Delete File\n\t\t3. Search File");
+                   int op=sc.nextInt();
+                   switch(op){
+                       case 1: addFile();
+                       break;
+                       case 2: deleteFile();
+                       break;
+                       case 3: searchFile();
+                       break;
+                       default: System.out.println("Invalid Input");
+                       break;
+                   }
+                   continue;
+           case 3: System.exit(0);
+           break;
+           default: System.out.println("Invalid Input");
+           break;
 	        }
 	    }while(n>0);
 	    sc.close();
@@ -46,7 +53,7 @@ public class MyLock {
         System.out.println("\t\tDeveloper details:- Sumant Shah");
         System.out.println("===============================================================");
         System.out.println("\t\tEnter the options you want to perform");
-        System.out.println("\t\t1. Display the files\n\t\t2. Add File to the directory\n\t\t3. Delete File from the directory\n\t\t4. Search File in the directory\n\t\t5. Exit");
+        System.out.println("\t\t1. Display the files\n\t\t2. Perform Operation (Add, Delete, Search)\n\t\t3. Exit");
     }
 
     /**
