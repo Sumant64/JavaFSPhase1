@@ -6,11 +6,33 @@ import java.util.*;
 
 public class MyLock {
 	public static void main(String args[]) {
-		
+		 Scanner sc=new Scanner(System.in);
+	       int n;
+	       do{ 
+	       menu();
+	       System.out.println("Enter the option");
+	       n=sc.nextInt();
+	       
+	        switch(n){
+	            case 1: display();
+	            break;
+	            case 2: addFile();
+	            break;
+	            case 3: deleteFile();
+	            break;
+	            case 4: searchFile();
+	            break;
+	            case 5: System.exit(0);
+	            break;
+	            default: System.out.println("Invalid Input");
+	            break;
+	        }
+	    }while(n>0);
+	    sc.close();
 	}
 	
 	/**
-     * Declation of static variables which will be used multiple times
+     * Declaration of static variables which will be used multiple times
      */
     static final String projectPath="C:\\Users\\NAWAL KISHOR\\Desktop\\MyProject\\Files";
     static final String errorMessage="Some error occured. Please contact LockedMe@admin";
